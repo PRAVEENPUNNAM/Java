@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+img{
+    max-width: 500px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body>
+<form action="Test" method="post">
+<input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+<input type="hidden" id="imagedata" name="data">
+<input type="submit" value="Submit">
+</form>
+<br><br><br><br>
+<div id="imgTest"></div>
+<script type='text/javascript'>
+  function encodeImageFileAsURL() {
+
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0) {
+      var fileToLoad = filesSelected[0];
+
+      var fileReader = new FileReader();
+
+      fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+       
+        
+        
+        var newImage = document.createElement('img');
+        newImage.src = srcData;
+
+        document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+        document.getElementById("imagedata").value=srcData;
+        
+      }
+      fileReader.readAsDataURL(fileToLoad);
+    }
+  }
+ 
+  
+</script>
+
+</body>
+</html>

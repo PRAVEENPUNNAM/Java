@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>click the button and see magic</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var date = "03/05/2013";
+var res= date.split("/").reverse().join("-");
+    document.getElementById("demo").innerHTML = res;
+}
+</script>
+
+</body>
+</html>

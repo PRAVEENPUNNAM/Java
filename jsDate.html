@@ -18,3 +18,27 @@ var res= date.split("/").reverse().join("-");
 
 </body>
 </html>
+
+function f()
+{
+	
+var data="123456";
+var l=data.length;
+var myArray =[];
+for(var i=0;i<l;i++)
+	{
+	var x=content.charAt(i);
+	myArray.push(x);
+	}
+for(var i=0;i<myArray.length;i++)
+{
+
+if(myArray[i].search(/[]+/)!=-1){
+ console.log("Hey i foud "+" "+i+" ="+myArray[i]);
+}
+else
+ {
+// console.log("INDEX"+" "+i+" is Not a Char ="+myArray[i]);
+ }
+}
+}
